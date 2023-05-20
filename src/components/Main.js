@@ -4,7 +4,7 @@ import { api } from '../utils/Api';
 import Card from './Card';
 
 
-function Main(props) {
+function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
 
   const [userName, setUserName] = React.useState([]);
   const [userDescription, setUserDescription] = React.useState([]);
@@ -41,21 +41,21 @@ function Main(props) {
               }}></div>
             <div className="avatar__overlay"></div>
             <button className="avatar__edit-button" arial-label="изменить аватар" type="button"
-              onClick={props.onEditAvatar}>
+              onClick={onEditAvatar}>
               <img src={editProfileImage} />
             </button>
           </div>
           <div className="profile__rotor">
             <h1 className="profile__name">{userName}</h1>
             <button className="profile__edit-button" type="button" aria-label="редактировать профиль"
-              onClick={props.onEditProfile}>
+              onClick={onEditProfile}>
             </button>
             <p className="profile__about">{userDescription}</p>
           </div>
         </div>
 
         <button className="profile__add-button" aria-label="добавить" type="button"
-          onClick={props.onAddPlace}
+          onClick={onAddPlace}
 
         ></button>
 
@@ -67,7 +67,7 @@ function Main(props) {
           {cards.map((card) => (
             <Card card={card}
               key={card._id}
-              onCardClick={props.onCardClick}
+              onCardClick={onCardClick}
             />
           ))}
         </ul>
