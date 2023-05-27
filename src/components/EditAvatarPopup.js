@@ -15,14 +15,12 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
   }, [currentUser]);
 
 
-
   function handleSubmit(event) {
     event.preventDefault();
     onUpdateAvatar({
       avatar: avatarRef.current.value/* Значение инпута, полученное с помощью рефа */
     });
     event.target.reset();
-
   }
 
   return (

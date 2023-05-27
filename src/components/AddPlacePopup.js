@@ -14,7 +14,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
   function handleLinkChange(event) {
     setLink(event.target.value);
   }
-  
+
   function resetInput(event) {
     setName(event.target.reset())
     setLink(event.target.reset())
@@ -37,6 +37,11 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
     setName(currentCard.name);
     setLink(currentCard.link);
   }, [currentCard]);
+
+  React.useEffect(() => {
+    setName('');
+    setLink('');
+}, [isOpen]);
 
   return (
     <PopupWithForm
