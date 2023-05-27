@@ -6,4 +6,5 @@
   object-fit: contain;
   object-position: center;
   overflow: hidden;
+  z-index: 2;
 }

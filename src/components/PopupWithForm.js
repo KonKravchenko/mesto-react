@@ -19,6 +19,6 @@ function PopupWithForm({ isOpen, name, title, buttonText, btnAriaLabel, children
     </section>
   );
 }
-// form__button_disabled
+
 
 export default PopupWithForm;
